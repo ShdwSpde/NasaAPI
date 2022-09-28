@@ -10,8 +10,10 @@ function getFetch(){
          console.log(data)
       if (data.media_type === 'image'){
         document.querySelector('img').src = data.hdurl
+        document.querySelector('iframe').style.display = 'none'
       } else if (data.media_type === 'video'){
         document.querySelector('iframe').src = data.url
+        document.querySelector('img').style.display = 'none'
       }
       document.querySelector('h2').innerText = data.title
       document.querySelector('p').innerText = data.explanation
